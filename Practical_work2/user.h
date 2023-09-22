@@ -1,33 +1,44 @@
 #include <string>
-
+#include <locale.h>
+using namespace std;
 /*
-User - користувач
+User 
 
-Поля:
+Fields:
 Username
 Phone
 Email
 Password
 
-Методи:
-enterTheInformation - введення всієї інформації для регістрації
-print - виведення даних про входження в додаток
+Methods:
+printAllInformation - about user(s)
+printTheInformationAboutStatus - entered or not to the app
 */
 
 class User {
 	// fields 
-	std::string userName, phone, email, password;
+	string userName="", phone="", email="", password="";
 
 public:
 	User(); // -> constructor
+	User(string _userName, string _phone, string _email, string _password);
 	~User(); // -> destructor
 
-	void enterTheInformation();
 	void print();
+	void printAllInformation();
 
 
 	// getters and setters
-	std::string getUserName();
-	void setUserName(std::string _userName);
+	string getUserName();
+	void setUserName(string _userName);
+
+	string getPhone();
+	void setPhone(string _phone);
+
+	string getEmail();
+	void setEmail(string _email);
+
+	string getPassword();
+	void setPassword(string _password);
 
 };
